@@ -11,3 +11,4 @@ common-*
 provider-*
 server-*
 configuration
+.gitignore
