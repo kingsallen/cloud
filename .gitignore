@@ -10,5 +10,6 @@ bin
 common-*
 provider-*
 server-*
+facade-*
 configuration
 .gitignore

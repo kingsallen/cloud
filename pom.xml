@@ -22,14 +22,13 @@
 		<module>server-zipkin</module>
 		<module>server-turbine</module>
 		<module>common-core</module>
+		<module>common-api</module>
+		<module>common-jooq</module>
 		<!--
 		<module>common-derby</module>
 		<module>common-h2</module>
 		<module>common-hsqldb</module>
 		<module>common-mybatis</module>
-		-->
-		<module>common-jooq</module>
-		<!--
 		<module>provider-derby</module>
 		<module>provider-h2</module>
 		<module>provider-hsqldb</module>
