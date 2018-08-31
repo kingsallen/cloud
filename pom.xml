@@ -24,19 +24,14 @@
 		<module>common-core</module>
 		<module>common-api</module>
 		<module>common-jooq</module>
-		<!--
-		<module>common-mybatis</module>
-		-->
-		<module>provider-jooq</module>
-		<!--
-		<module>provider-mybatis</module>
-		-->
-		<module>provider-cache</module>
-		<module>provider-dict</module>
-		<module>provider-user</module>
-		<module>provider-company</module>
-		<module>provider-position</module>
-		<module>provider-profile</module>
+		<module>provider-jooq</module><!-- 11001 -->
+		<module>provider-dict</module><!-- 11003 -->
+		<module>provider-user</module><!-- 11005 -->
+		<module>provider-company</module><!-- 11007 -->
+		<module>provider-position</module><!-- 11009 -->
+		<module>provider-profile</module><!-- 11011 -->
+		<module>provider-quartz</module><!-- 11013 -->
+		<module>provider-cache</module><!-- 11015 -->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
