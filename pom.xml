@@ -32,6 +32,16 @@
 		<module>provider-profile</module><!-- 11011 -->
 		<module>provider-quartz</module><!-- 11013 -->
 		<module>provider-cache</module><!-- 11015 -->
+		<module>provider-application</module><!-- 11017 -->
+		<module>provider-ats</module><!-- 11019 -->
+		<module>provider-search</module><!-- 11021 -->
+		<module>provider-account</module><!-- 11023 -->
+		<module>provider-talentpool</module><!-- 11025 -->
+		<module>provider-parsing</module><!-- 11027 -->
+		<module>provider-messaging</module><!-- 11029 -->
+		<module>provider-careerstory</module><!-- 11031 -->
+		<module>provider-jobboard</module><!-- 11033 -->
+		<module>provider-statistics</module><!-- 11035 -->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
