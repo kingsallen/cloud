@@ -42,6 +42,8 @@
 		<module>provider-careerstory</module><!-- 11031 -->
 		<module>provider-jobboard</module><!-- 11033 -->
 		<module>provider-statistics</module><!-- 11035 -->
+		<module>facade-hr</module><!-- 9001 -->
+		<module>facade-wechat</module><!-- 9003 -->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
