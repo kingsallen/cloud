@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moseeker</groupId>
 	<artifactId>alphacloud</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -112,14 +112,20 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>spring-milestone</id>
-			<name>spring Maven Release Repository</name>
+			<id>spring-release</id>
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
 		<repository>
-			<id>org.jboss.repository.releases</id>
-			<name>JBoss Maven Release Repository</name>
+			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</repository>
+		<!-- moseeker私服仓库 -->
+		<repository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -129,11 +135,20 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>spring-milestone</id>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-release</id>
 			<url>https://repo.spring.io/libs-release</url>
 		</pluginRepository>
 		<pluginRepository>
-			<id>org.jboss.repository.releases</id>
+			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
+		<!-- moseeker私服仓库 -->
+		<pluginRepository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>
