@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moseeker</groupId>
 	<artifactId>alphacloud</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,22 +24,26 @@
 		<module>common-core</module>
 		<module>common-api</module>
 		<module>common-jooq</module>
-		<!--
-		<module>common-derby</module>
-		<module>common-h2</module>
-		<module>common-hsqldb</module>
-		<module>common-mybatis</module>
-		<module>provider-derby</module>
-		<module>provider-h2</module>
-		<module>provider-hsqldb</module>
-		<module>provider-mybatis</module>
-		-->
-		<!--<module>provider-jooq</module>-->
-		<!--<module>provider-dict</module>-->
-		<!--<module>provider-user</module>-->
+		<module>provider-jooq</module>
+		<module>provider-dict</module>
+		<module>provider-user</module>
 		<module>provider-company</module>
-		<!--<module>provider-position</module>-->
-		<!--<module>provider-profile</module>-->
+		<module>provider-position</module>
+		<module>provider-profile</module>
+		<module>provider-quartz</module>
+		<module>provider-cache</module>
+		<module>provider-application</module>
+		<module>provider-ats</module>
+		<module>provider-search</module>
+		<module>provider-account</module>
+		<module>provider-talentpool</module>
+		<module>provider-parsing</module>
+		<module>provider-messaging</module>
+		<module>provider-careerstory</module>
+		<module>provider-jobboard</module>
+		<module>provider-statistics</module>
+		<module>facade-hr</module>
+		<module>facade-wechat</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
@@ -55,24 +59,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.7</version>
-        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!--<configuration>-->
-					<!--<source>${maven.compiler.source}</source>-->
-					<!--<target>${maven.compiler.target}</target>-->
-				<!--</configuration>-->
 				<executions>
 					<execution>
 						<goals>
@@ -115,14 +110,20 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>spring-milestone</id>
-			<name>spring Maven Release Repository</name>
+			<id>spring-release</id>
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
 		<repository>
-			<id>org.jboss.repository.releases</id>
-			<name>JBoss Maven Release Repository</name>
+			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</repository>
+		<!-- moseeker私服仓库 -->
+		<repository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -132,11 +133,20 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>spring-milestone</id>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-release</id>
 			<url>https://repo.spring.io/libs-release</url>
 		</pluginRepository>
 		<pluginRepository>
-			<id>org.jboss.repository.releases</id>
+			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
+		<!-- moseeker私服仓库 -->
+		<pluginRepository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>

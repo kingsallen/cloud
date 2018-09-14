@@ -1,0 +1,16 @@
+target
+bin
+.settings
+.classpath
+.project
+.springBeans
+.idea
+.iml
+*.log
+*.iml
+server-*
+common-*
+provider-*
+facade-*
+configuration
+data
