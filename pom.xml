@@ -25,25 +25,26 @@
 		<module>common-api</module>
 		<module>common-jooq</module>
 		<module>provider-jooq</module>
-		<!--<module>provider-dict</module>-->
-		<!--<module>provider-user</module>-->
-		<!--<module>provider-company</module>-->
+		<module>provider-dict</module>
+		<module>provider-user</module>
+		<module>provider-company</module>
 		<module>provider-position</module>
-		<!--<module>provider-profile</module>-->
-		<!--<module>provider-quartz</module>-->
-		<!--<module>provider-cache</module>-->
+		<module>provider-profile</module>
+		<module>provider-quartz</module>
 		<module>provider-application</module>
-		<!--<module>provider-ats</module>-->
+		<module>provider-ats</module>
 		<module>provider-search</module>
 		<!--<module>provider-account</module>-->
-		<!--<module>provider-talentpool</module>-->
-		<!--<module>provider-parsing</module>-->
-		<!--<module>provider-messaging</module>-->
-		<!--<module>provider-careerstory</module>-->
-		<!--<module>provider-jobboard</module>-->
+		<module>provider-talentpool</module>
+		<module>provider-parsing</module>
+		<module>provider-messaging</module>
+		<module>provider-careerstory</module>
+		<module>provider-jobboard</module>
 		<!--<module>provider-statistics</module>-->
-		<!--<module>facade-hr</module>-->
-		<!--<module>facade-wechat</module>-->
+		<module>facade-hr</module>
+		<module>facade-wechat</module>
+		<module>provider-im</module>
+
 	</modules>
 	<dependencyManagement>
 		<dependencies>
@@ -95,6 +96,14 @@
 		</plugins>
 	</build>
 	<repositories>
+		<!-- moseeker私服仓库 -->
+		<repository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>spring-snapshots</id>
 			<url>https://repo.spring.io/snapshot</url>
@@ -117,16 +126,13 @@
 			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
 		</repository>
-		<!-- moseeker私服仓库 -->
-		<repository>
-			<id>moseeker-snapshots</id>
-			<url>http://maven.moseeker.com/repository/maven-public/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
 	<pluginRepositories>
+		<!-- moseeker私服仓库 -->
+		<pluginRepository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>spring-snapshots</id>
 			<url>https://repo.spring.io/snapshot</url>
@@ -142,11 +148,6 @@
 		<pluginRepository>
 			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-		</pluginRepository>
-		<!-- moseeker私服仓库 -->
-		<pluginRepository>
-			<id>moseeker-snapshots</id>
-			<url>http://maven.moseeker.com/repository/maven-public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>
