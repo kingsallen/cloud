@@ -39,7 +39,7 @@
 		<!--<module>provider-talentpool</module>-->
 		<!--<module>provider-parsing</module>-->
 		<!--<module>provider-messaging</module>-->
-		<!--<module>provider-careerstory</module>-->
+		<module>provider-careerstory</module>
 		<!--<module>provider-jobboard</module>-->
 		<!--<module>provider-statistics</module>-->
 		<!--<module>facade-hr</module>-->
