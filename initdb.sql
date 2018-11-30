@@ -3,6 +3,7 @@ set @hr_id_mother = 10;
 set @hr_id_mother_mobile = '13800000000';
 Set @hr_id_child = 11;
 Set @hr_id_child_mobile = '13800000001';
+set @team_id_mother = 10
 
 
 -- 创建付费母公司
@@ -16,7 +17,8 @@ REPLACE INTO `hrdb`.`hr_company_conf` (`company_id`, `theme_id`, `hb_throttle`, 
 REPLACE INTO `hrdb`.`hr_company_account` (`company_id`, `account_id`) VALUES (@company_id, @hr_id_mother);
 REPLACE INTO `hrdb`.`hr_company_account` (`company_id`, `account_id`) VALUES (@company_id, @hr_id_child);
 
-
+-- 创建母公司团队
+replace into hrdb.hr_team (`company_id`, `id`) values (@company_id, @team_id_mother);
 
 
 -- 创建母账号
