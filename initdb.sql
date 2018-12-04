@@ -3,6 +3,7 @@ set @hr_id_mother = 10;
 set @hr_id_mother_mobile = '13800000000';
 Set @hr_id_child = 11;
 Set @hr_id_child_mobile = '13800000001';
+set @team_id_mother = 10
 
 
 -- 创建付费母公司
@@ -16,7 +17,8 @@ REPLACE INTO `hrdb`.`hr_company_conf` (`company_id`, `theme_id`, `hb_throttle`, 
 REPLACE INTO `hrdb`.`hr_company_account` (`company_id`, `account_id`) VALUES (@company_id, @hr_id_mother);
 REPLACE INTO `hrdb`.`hr_company_account` (`company_id`, `account_id`) VALUES (@company_id, @hr_id_child);
 
-
+-- 创建母公司团队
+replace into hrdb.hr_team (`company_id`, `id`) values (@company_id, @team_id_mother);
 
 
 -- 创建母账号
@@ -79,3 +81,89 @@ REPLACE INTO `userdb`.`user_user` (`id`, `country_code`, `username`, `password`,
 -- 微信注册用户
 REPLACE INTO `userdb`.`user_user` (`id`, `country_code`, `username`, `password`, `is_disable`, `rank`, `register_time`, `register_ip`, `last_login_time`, `last_login_ip`, `login_count`, `mobile`, `email`, `activation`, `activation_code`, `token`, `name`, `headimg`, `national_code_id`, `wechat_id`, `unionid`, `source`, `company`, `position`, `parentid`, `nickname`, `email_verified`, `update_time`) VALUES ('2', '86', 'oHhnJt2jXD6OVtbOd_rUw7Veu3u4', '', '0', NULL, '2017-07-13 14:43:45', '114.221.23.208', '2017-07-13 14:43:45', '114.221.23.208', '1', '0', '', '0', '0', '', '', 'http://thirdwx.qlogo.cn/mmopen/gRQzzdqsicEKtsTiadPekrhaTQV0fkR40rQt8xJywOUmp54EOhjKJ8fOic1RV1XMS0AVjpmyfw9icC0xUqvWHNKjFYh7FcPuI1XI/132', '1', '414', 'oHhnJt2jXD6OVtbOd_rUw7Veu3u4', '2', '', '', '0', '张伟 ¹⁵³⁶⁶¹¹³⁹⁰⁰', '2', '2018-08-03 23:21:13');
 REPLACE INTO `userdb`.`user_wx_user` (`id`, `wechat_id`, `group_id`, `sysuser_id`, `is_subscribe`, `openid`, `nickname`, `sex`, `city`, `country`, `province`, `language`, `headimgurl`, `subscribe_time`, `unsubscibe_time`, `unionid`, `reward`, `auto_sync_info`, `create_time`, `update_time`, `source`) VALUES ('2', '414', '0', '2578576', '1', 'oWdfNjovGQvsprwxhxcdA0tpPJVo', '张伟 ¹⁵³⁶⁶¹¹³⁹⁰⁰', '2', '南京', '中国', '江苏', 'zh_CN', 'http://thirdwx.qlogo.cn/mmopen/gRQzzdqsicEKtsTiadPekrhaTQV0fkR40rQt8xJywOUmp54EOhjKJ8fOic1RV1XMS0AVjpmyfw9icC0xUqvWHNKjFYh7FcPuI1XI/132', '2017-07-13 14:43:42', NULL, 'oHhnJt2jXD6OVtbOd_rUw7Veu3u4', '0', '0', '2017-07-13 14:43:42', '2018-08-03 23:21:13', '7');
+
+
+set @status=0;
+set @hr_id = 10;
+Set @hr_id_child = 11;
+set @company_id=10;
+set @user_id=1;
+
+delete from jobdb.job_position where id in(10000,10001,10002,10003,10004);
+
+INSERT INTO jobdb.job_position (id,jobnumber, company_id, title, province, city, department, l_jobid, publish_date, stop_date, accountabilities, experience, requirement, salary, language, job_grade, status, visitnum, lastvisit, source_id, update_time, business_group, employment_type, hr_email, benefits, degree, feature, email_notice, candidate_source, occupation, is_recom, industry, hongbao_config_id, hongbao_config_recom_id, hongbao_config_app_id, email_resume_conf, l_PostingTargetId, priority, share_tpl_id, district, count, salary_top, salary_bottom, experience_above, degree_above, management_experience, gender, publisher, app_cv_config_id, source, hb_status, child_company_id, age, major_required, work_address, keyword, reporting_to, is_hiring, underlings, language_required, target_industry, current_status, position_code, team_id, profile_cc_mail_enabled, is_referral) VALUES (10000,'759926', @company_id, 'Procurement Analyst', '', '中国-南京', '', 0, '2017-10-13 18:49:28', null, '', '', '同上', '面议', '', 10, @status, 1, '', 10, '2018-10-25 14:56:20', '', 0, null, '', 0, '', 1, 0, '', 1, '', 0, 0, 0, 0, null, 10, null, '', 0, 0, 0, 0, 0, 1, 2, @hr_id, 0, 9, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_position (id,jobnumber, company_id, title, province, city, department, l_jobid, publish_date, stop_date, accountabilities, experience, requirement, salary, language, job_grade, status, visitnum, lastvisit, source_id, update_time, business_group, employment_type, hr_email, benefits, degree, feature, email_notice, candidate_source, occupation, is_recom, industry, hongbao_config_id, hongbao_config_recom_id, hongbao_config_app_id, email_resume_conf, l_PostingTargetId, priority, share_tpl_id, district, count, salary_top, salary_bottom, experience_above, degree_above, management_experience, gender, publisher, app_cv_config_id, source, hb_status, child_company_id, age, major_required, work_address, keyword, reporting_to, is_hiring, underlings, language_required, target_industry, current_status, position_code, team_id, profile_cc_mail_enabled, is_referral) VALUES (10001,'771688', @company_id, 'Operator-2', '', '中国-南京', '', 0, '2017-10-13 18:49:28', null, '', '', '同上', '面议', '', 10, @status, 0, '', 10, '2018-10-25 14:56:20', '', 0, null, '', 0, '', 1, 0, '', 1, '', 0, 0, 0, 0, null, 10, null, '', 0, 0, 0, 0, 0, 1, 2, @hr_id, 0, 9, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_position (id,jobnumber, company_id, title, province, city, department, l_jobid, publish_date, stop_date, accountabilities, experience, requirement, salary, language, job_grade, status, visitnum, lastvisit, source_id, update_time, business_group, employment_type, hr_email, benefits, degree, feature, email_notice, candidate_source, occupation, is_recom, industry, hongbao_config_id, hongbao_config_recom_id, hongbao_config_app_id, email_resume_conf, l_PostingTargetId, priority, share_tpl_id, district, count, salary_top, salary_bottom, experience_above, degree_above, management_experience, gender, publisher, app_cv_config_id, source, hb_status, child_company_id, age, major_required, work_address, keyword, reporting_to, is_hiring, underlings, language_required, target_industry, current_status, position_code, team_id, profile_cc_mail_enabled, is_referral) VALUES (10002,'771160', @company_id, 'Operator-2', '', '北京工厂', '', 0, '2017-10-13 18:49:29', null, '', '', '同上', '面议', '', 10, @status, 0, '', 10, '2018-10-25 14:56:20', '', 0, null, '', 0, '', 1, 0, '', 1, '', 0, 0, 0, 0, null, 10, null, '', 0, 0, 0, 0, 0, 1, 2, @hr_id_child, 0, 9, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_position (id,jobnumber, company_id, title, province, city, department, l_jobid, publish_date, stop_date, accountabilities, experience, requirement, salary, language, job_grade, status, visitnum, lastvisit, source_id, update_time, business_group, employment_type, hr_email, benefits, degree, feature, email_notice, candidate_source, occupation, is_recom, industry, hongbao_config_id, hongbao_config_recom_id, hongbao_config_app_id, email_resume_conf, l_PostingTargetId, priority, share_tpl_id, district, count, salary_top, salary_bottom, experience_above, degree_above, management_experience, gender, publisher, app_cv_config_id, source, hb_status, child_company_id, age, major_required, work_address, keyword, reporting_to, is_hiring, underlings, language_required, target_industry, current_status, position_code, team_id, profile_cc_mail_enabled, is_referral) VALUES (10003,'760138', @company_id, 'Electrician-1', '', '中国-无锡', '', 0, '2017-10-13 18:49:29', null, '', '', '同上', '面议', '', 10, @status, 0, '', 10, '2018-10-25 14:56:20', '', 0, null, '', 0, '', 1, 0, '', 1, '', 0, 0, 0, 0, null, 10, null, '', 0, 0, 0, 0, 0, 1, 2, @hr_id_child, 0, 9, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_position (id,jobnumber, company_id, title, province, city, department, l_jobid, publish_date, stop_date, accountabilities, experience, requirement, salary, language, job_grade, status, visitnum, lastvisit, source_id, update_time, business_group, employment_type, hr_email, benefits, degree, feature, email_notice, candidate_source, occupation, is_recom, industry, hongbao_config_id, hongbao_config_recom_id, hongbao_config_app_id, email_resume_conf, l_PostingTargetId, priority, share_tpl_id, district, count, salary_top, salary_bottom, experience_above, degree_above, management_experience, gender, publisher, app_cv_config_id, source, hb_status, child_company_id, age, major_required, work_address, keyword, reporting_to, is_hiring, underlings, language_required, target_industry, current_status, position_code, team_id, profile_cc_mail_enabled, is_referral) VALUES (10004,'770363', @company_id, 'Digital Marketing Executive', '', '中国-上海', '', 0, '2017-10-13 18:49:29', null, '', '', '同上', '面议', '', 10, @status, 0, '', 10, '2018-10-25 14:56:20', '', 0, null, '', 0, '', 1, 0, '', 1, '', 0, 0, 0, 0, null, 10, null, '', 0, 0, 0, 0, 0, 1, 2, @hr_id_child, 0, 9, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+delete from jobdb.job_occupation where id in(10000,10001,10002,10003,10004);
+INSERT INTO jobdb.job_occupation (id,company_id, status, name) VALUES (10001,@company_id, 1, '生产经理/车间主任');
+INSERT INTO jobdb.job_occupation (id,company_id, status, name) VALUES (10002,@company_id, 1, '医药销售代表');
+INSERT INTO jobdb.job_occupation (id,company_id, status, name) VALUES (10003,@company_id, 1, '临床数据分析员');
+INSERT INTO jobdb.job_occupation (id,company_id, status, name) VALUES (10004,@company_id, 1, '销售代表');
+INSERT INTO jobdb.job_occupation (id,company_id, status, name) VALUES (10000,@company_id, 1, '销售代表');
+
+delete from jobdb.job_custom where id in(10000,10001,10002,10003,10004);
+INSERT INTO jobdb.job_custom (id,company_id, status, name, type) VALUES (10000, @company_id, 1, '自宝义1', 1);
+INSERT INTO jobdb.job_custom (id,company_id, status, name, type) VALUES (10001, @company_id, 1, '22@mos.com', 1);
+INSERT INTO jobdb.job_custom (id,company_id, status, name, type) VALUES (10002, @company_id, 1, '12@gmail.com', 1);
+INSERT INTO jobdb.job_custom (id,company_id, status, name, type) VALUES (10003, @company_id, 1, '阿迪', 1);
+INSERT INTO jobdb.job_custom (id,company_id, status, name, type) VALUES (10004, @company_id, 1, '耐克', 1);
+
+
+
+delete from jobdb.job_position_ext where pid in(10000,10001,10002,10003,10004);
+
+INSERT INTO jobdb.job_position_ext (pid, job_custom_id, job_occupation_id, extra, alipay_job_id) VALUES (10000, 0,  10001, '', 0);
+INSERT INTO jobdb.job_position_ext (pid, job_custom_id, job_occupation_id, extra, alipay_job_id) VALUES (10001, 0,  10002, '', 0);
+INSERT INTO jobdb.job_position_ext (pid, job_custom_id, job_occupation_id, extra, alipay_job_id) VALUES (10002, 0,  10003, '', 0);
+INSERT INTO jobdb.job_position_ext (pid, job_custom_id, job_occupation_id, extra, alipay_job_id) VALUES (10003, 0,  10004, '', 1);
+INSERT INTO jobdb.job_position_ext (pid, job_custom_id, job_occupation_id, extra, alipay_job_id) VALUES (10004, 0,  10000, '', 1);
+
+delete from jobdb.job_position_city where pid in(10000,10001,10002,10003,10004);
+
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10000, 110000);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10001, 110000);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10000, 220100);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10002, 710100);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10001, 710200);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10002, 710400);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10003, 710500);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10004, 710800);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10001, 810000);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10001, 820000);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10002, 430100);
+INSERT INTO jobdb.job_position_city (pid, code) VALUES (10003, 310000);
+
+delete from jobdb.job_application where id in(10000,10001,10002,10003,10004);
+
+INSERT INTO jobdb.job_application (id,wechat_id, position_id, recommender_id, submit_time, status_id, l_application_id, reward, source_id, `_create_time`, applier_id, interview_id, resume_id, ats_status, applier_name, disable, routine, is_viewed, not_suitable, company_id, update_time, app_tpl_id, proxy, apply_type, email_status, view_count, recommender_user_id, origin) VALUES (10000,0, 10000, 0, '2018-02-06 13:51:31', 0, 0, 50, 0, '2017-07-17 18:24:56', @user_id, 0, '', 0, '', 1, 0, 0, 0, @company_id, '2018-02-06 16:06:10', 10, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_application (id,wechat_id, position_id, recommender_id, submit_time, status_id, l_application_id, reward, source_id, `_create_time`, applier_id, interview_id, resume_id, ats_status, applier_name, disable, routine, is_viewed, not_suitable, company_id, update_time, app_tpl_id, proxy, apply_type, email_status, view_count, recommender_user_id, origin) VALUES (10001,0, 10001, 0, '2017-08-04 17:42:41', 0, 0, 0, 0, '2017-08-04 17:42:41', @user_id, 0, '', 0, '', 0, 0, 0, 0, @company_id, '2018-02-06 16:06:10', 1, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_application (id,wechat_id, position_id, recommender_id, submit_time, status_id, l_application_id, reward, source_id, `_create_time`, applier_id, interview_id, resume_id, ats_status, applier_name, disable, routine, is_viewed, not_suitable, company_id, update_time, app_tpl_id, proxy, apply_type, email_status, view_count, recommender_user_id, origin) VALUES (10002,0, 10002, 0, '2018-02-06 13:51:31', 0, 0, 0, 0, '2017-08-15 16:42:46', @user_id, 0, '', 0, '', 0, 0, 0, 0, @company_id, '2018-02-06 16:06:10', 6, 0, 0, 0, 0, 0, 0);
+INSERT INTO jobdb.job_application (id,wechat_id, position_id, recommender_id, submit_time, status_id, l_application_id, reward, source_id, `_create_time`, applier_id, interview_id, resume_id, ats_status, applier_name, disable, routine, is_viewed, not_suitable, company_id, update_time, app_tpl_id, proxy, apply_type, email_status, view_count, recommender_user_id, origin) VALUES (10003,0, 10004, 0, '2018-02-06 13:51:31', 0, 0, 100, 0, '2017-08-23 16:06:56', @user_id, 0, '', 0, '', 0, 0, 0, 0, @company_id, '2018-08-27 09:39:14', 12, 0, 0, 0, 7, 0, 2);
+INSERT INTO jobdb.job_application (id,wechat_id, position_id, recommender_id, submit_time, status_id, l_application_id, reward, source_id, `_create_time`, applier_id, interview_id, resume_id, ats_status, applier_name, disable, routine, is_viewed, not_suitable, company_id, update_time, app_tpl_id, proxy, apply_type, email_status, view_count, recommender_user_id, origin) VALUES (10004,0, 10003, 0, '2018-02-06 13:51:31', 0, 0, 0, 0, '2017-08-23 16:08:26', @user_id, 0, '', 0, '', 0, 0, 0, 0, @company_id, '2018-03-01 18:14:12', 6, 0, 0, 0, 9, 0, 2);
+
+delete from `profiledb`.`profile_profile` where id = @profile_id;
+delete from `profiledb`.`profile_education` where profile_id = @profile_id;
+delete from `profiledb`.`profile_basic` where profile_id = @profile_id;
+delete from `profiledb`.`profile_completeness` where profile_id = @profile_id;
+delete from `profiledb`.`profile_intention` where profile_id = @profile_id;
+delete from `profiledb`.`profile_other` where profile_id = @profile_id;
+delete from `profiledb`.`profile_projectexp` where profile_id = @profile_id;
+delete from `profiledb`.`profile_skill` where profile_id = @profile_id;
+delete from `profiledb`.`profile_workexp` where profile_id = @profile_id;
+delete from `profiledb`.`profile_works` where profile_id = @profile_id;
+
+INSERT INTO `profiledb`.`profile_profile` (`id`, `uuid`, `lang`, `source`, `completeness`, `user_id`, `disable`, `create_time`, `update_time`, `origin`) VALUES (@profile_id, '18d23b6c-343f-4425-a012-b07ea6172470', '1', '0', '94', @user_id, '1', '2018-09-18 18:25:14', '2018-09-18 18:23:58', '1000000000000000');
+INSERT INTO `profiledb`.`profile_education` (`id`, `profile_id`, `start`, `end`, `end_until_now`, `college_code`, `college_name`, `college_logo`, `major_code`, `major_name`, `degree`, `description`, `is_full`, `is_unified`, `is_study_abroad`, `study_abroad_country`, `create_time`, `update_time`, `country_id`) VALUES ('340624', @profile_id, '2015-09-01', '2018-09-18', '1', '44324', '张家界航空工业职业技术学院', '', '0', '计算机科学与技术', '4', '', '0', '0', '0', '', '2018-09-18 18:25:14', '2018-09-18 18:23:58', '43');
+INSERT INTO `profiledb`.`profile_basic` (`profile_id`, `name`, `gender`, `nationality_code`, `nationality_name`, `city_code`, `city_name`, `birth`, `weixin`, `qq`, `motto`, `self_introduction`, `create_time`, `update_time`) VALUES (@profile_id, '杨志阳', '1', '0', '', '310000', '上海-嘉定区', '1997-02-18', '', '', '', '最近一年时间主要从事微信公众号平台的开发，完成了多个微信商城的开发以及后续的维护工作,对微擎开发微信商城有一定的实战经验,对微擎开发具备自己的想法和经验', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_completeness` (`profile_id`, `user_user`, `profile_basic`, `profile_workexp`, `profile_education`, `profile_projectexp`, `profile_language`, `profile_skill`, `profile_credentials`, `profile_awards`, `profile_works`, `profile_intention`) VALUES (@profile_id, '8', '15', '45', '10', '10', '0', '1', '2', '0', '0', '3');
+INSERT INTO `profiledb`.`profile_intention` (`id`, `profile_id`, `worktype`, `workstate`, `salary_code`, `tag`, `consider_venture_company_opportunities`, `create_time`, `update_time`) VALUES ('122535', @profile_id, '1', '2', '0', '0', '0', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_other` (`profile_id`, `other`, `create_time`, `update_time`) VALUES (@profile_id, '{\"workyears\":1,\"degree\":\"大专\",\"expectsalary\":\"6万以下\",\"salary\":\"6万以下\"}', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_projectexp` (`id`, `profile_id`, `start`, `end`, `end_until_now`, `name`, `company_name`, `is_it`, `dev_tool`, `hardware`, `software`, `url`, `description`, `role`, `responsibility`, `achievement`, `member`, `create_time`, `update_time`) VALUES ('211327', @profile_id, '2018-09-01', '2018-09-18', '1', '菜场app', '苏州阿米巴信息技术有限公司', '0', '', '', '', '', '菜市场app，用于用户在手机上下单购买菜市场里面的菜，通过骑手配送到用户手里，商家交完佣金，入驻app以后，可以使用app发布销售菜的信息。项目使用到maven+spring mvc +spring +mybatis', '', '我主要开发新增商品和供应商模块', '', '', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_projectexp` (`id`, `profile_id`, `start`, `end`, `end_until_now`, `name`, `company_name`, `is_it`, `dev_tool`, `hardware`, `software`, `url`, `description`, `role`, `responsibility`, `achievement`, `member`, `create_time`, `update_time`) VALUES ('211328', @profile_id, '2017-11-01', '2017-12-01', '0', '微信公众号金如意金融平台', '苏州阿米巴信息技术有限公司', '0', '', '', '', '', '微信流量大，微信公众号，小程序特别火，为了适应在线金融，的发展趋势，实现在线销售黄金，项目主要实现活存金和定存金黄金的购买，实时更新金价，购买之后实现第三方易宝支付，和微信支付,该项目主要使用maven+spring +spring mvc+hibernate', '', '我在这个项目中负责编写黄金平台的易宝支付和微信支付功能', '', '', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_skill` (`id`, `profile_id`, `name`, `level`, `month`, `create_time`, `update_time`) VALUES ('144534', @profile_id, 'Java', '3', '0', '2018-09-18 18:25:14', '2018-09-18 18:23:58');
+INSERT INTO `profiledb`.`profile_workexp` (`id`, `profile_id`, `start`, `end`, `end_until_now`, `salary_code`, `industry_code`, `industry_name`, `company_id`, `department_name`, `position_code`, `position_name`, `description`, `type`, `city_code`, `city_name`, `report_to`, `underlings`, `reference`, `resign_reason`, `achievement`, `create_time`, `update_time`, `job`) VALUES ('473436', @profile_id, '2017-06-01', '2018-09-18', '1', '0', '1101', '计算机软件', '259696', '产品开发部', '0', '', '在公司用微擎负责多个微信公众号商城的开发如淘鲜蜂商城，玉叶生鲜商城，和在线教育平台如微鑫学社，在线拍卖商城如中艺微拍的程序开发和数据库设计工作,有幸参与j2ee互联网金融平台的金如意的程序开发工作开发工作,和微信支付的开发。', '0', '0', '', '', '0', '', '', '', '2018-09-18 18:25:14', '2018-09-18 18:23:58', '软件工程师');
+INSERT INTO `profiledb`.`profile_works` (`id`, `profile_id`, `name`, `url`, `cover`, `description`, `create_time`, `update_time`) VALUES ('3', @profile_id, '', 'http://sda.s.com', 'profile/myheadimage.jpg', 'sda\n333\naeSd\nsdaDA\nDASDA\nDSADA\n水电费\n第三方是发的谁', '2016-07-25 16:26:43', '2016-07-25 16:26:43');
+
