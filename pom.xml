@@ -25,18 +25,18 @@
 		<module>common-api</module>
 		<module>common-jooq</module>
 		<module>provider-jooq</module>
-		<!--<module>provider-dict</module>-->
-		<!--<module>provider-user</module>-->
-		<!--<module>provider-company</module>-->
+		<module>provider-dict</module>
+		<module>provider-user</module>
+		<module>provider-company</module>
 		<module>provider-position</module>
-		<!--<module>provider-profile</module>-->
+		<module>provider-profile</module>
 		<!--<module>provider-quartz</module>-->
 		<!--<module>provider-cache</module>-->
-		<module>provider-application</module>
+		<!--<module>provider-application</module>-->
 		<!--<module>provider-ats</module>-->
-		<module>provider-search</module>
+		<!--<module>provider-search</module>-->
 		<!--<module>provider-account</module>-->
-		<!--<module>provider-talentpool</module>-->
+		<module>provider-talentpool</module>
 		<!--<module>provider-parsing</module>-->
 		<!--<module>provider-messaging</module>-->
 		<!--<module>provider-careerstory</module>-->
