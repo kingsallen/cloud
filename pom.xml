@@ -92,6 +92,14 @@
 		</plugins>
 	</build>
 	<repositories>
+		<!-- moseeker私服仓库 -->
+		<repository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>spring-snapshots</id>
 			<url>https://repo.spring.io/snapshot</url>
@@ -114,16 +122,13 @@
 			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
 		</repository>
-		<!-- moseeker私服仓库 -->
-		<repository>
-			<id>moseeker-snapshots</id>
-			<url>http://maven.moseeker.com/repository/maven-public/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
 	<pluginRepositories>
+		<!-- moseeker私服仓库 -->
+		<pluginRepository>
+			<id>moseeker-snapshots</id>
+			<url>http://maven.moseeker.com/repository/maven-public/</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>spring-snapshots</id>
 			<url>https://repo.spring.io/snapshot</url>
@@ -139,11 +144,6 @@
 		<pluginRepository>
 			<id>jboss-release</id>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-		</pluginRepository>
-		<!-- moseeker私服仓库 -->
-		<pluginRepository>
-			<id>moseeker-snapshots</id>
-			<url>http://maven.moseeker.com/repository/maven-public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>
