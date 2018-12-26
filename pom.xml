@@ -30,27 +30,24 @@
 		<module>provider-company</module>
 		<module>provider-position</module>
 		<module>provider-profile</module>
-		<!--<module>provider-quartz</module>-->
-		<!--<module>provider-cache</module>-->
-		<!--<module>provider-application</module>-->
-		<!--<module>provider-ats</module>-->
-		<!--<module>provider-search</module>-->
-		<!--<module>provider-account</module>-->
+		<module>provider-application</module>
+		<module>provider-ats</module>
+		<module>provider-search</module>
 		<module>provider-talentpool</module>
-		<!--<module>provider-parsing</module>-->
-		<!--<module>provider-messaging</module>-->
-		<!--<module>provider-careerstory</module>-->
-		<!--<module>provider-jobboard</module>-->
-		<!--<module>provider-statistics</module>-->
-		<!--<module>facade-hr</module>-->
-		<!--<module>facade-wechat</module>-->
+		<module>provider-parsing</module>
+		<module>provider-messaging</module>
+		<module>provider-careerstory</module>
+		<module>provider-jobboard</module>
+		<module>facade-hr</module>
+		<module>facade-wechat</module>
+		<module>tx-manager</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Edgware.SR4</version>
+				<version>Edgware.SR5</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
