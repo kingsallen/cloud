@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moseeker</groupId>
 	<artifactId>alphacloud</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,7 +94,7 @@
 	<repositories>
 		<!-- moseeker私服仓库 -->
 		<repository>
-			<id>moseeker-snapshots</id>
+			<id>moseeker-releases</id>
 			<url>http://maven.moseeker.com/repository/maven-public/</url>
 			<snapshots>
 				<enabled>true</enabled>
@@ -126,7 +126,7 @@
 	<pluginRepositories>
 		<!-- moseeker私服仓库 -->
 		<pluginRepository>
-			<id>moseeker-snapshots</id>
+			<id>moseeker-releases</id>
 			<url>http://maven.moseeker.com/repository/maven-public/</url>
 		</pluginRepository>
 		<pluginRepository>

@@ -9,7 +9,10 @@ bin
 .iml
 *.log
 *.iml
+<<<<<<< HEAD
 server-*
+=======
+>>>>>>> origin
 common-*
 provider-*
 facade-*
