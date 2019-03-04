@@ -5,6 +5,7 @@ bin
 .project
 .springBeans
 .idea
+.DS_Store
 .iml
 *.log
 *.iml
@@ -14,3 +15,4 @@ provider-*
 facade-*
 configuration
 data
+tx-manager
