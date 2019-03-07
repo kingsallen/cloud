@@ -17,25 +17,34 @@
 		<version>1.5.14.RELEASE</version>
 	</parent>
 	<modules>
-		<module>server-eureka</module>
-		<module>server-config</module>
-		<module>server-zipkin</module>
-		<module>server-turbine</module>
+		<!--<module>server-eureka</module>-->
+		<!--<module>server-config</module>-->
+		<!--<module>server-zipkin</module>-->
+		<!--<module>server-turbine</module>-->
 		<module>common-core</module>
 		<module>common-api</module>
 		<module>common-jooq</module>
-		<module>provider-jooq</module>
 		<!--<module>provider-dict</module>-->
 		<!--<module>provider-user</module>-->
-		<module>provider-company</module>
-		<module>provider-position</module>
-		<module>provider-profile</module>
+		<!--<module>provider-company</module>-->
+		<!--<module>provider-position</module>-->
+		<!--<module>provider-profile</module>-->
 		<!--<module>provider-quartz</module>-->
 		<!--<module>provider-cache</module>-->
-		<module>provider-application</module>
+		<!--<module>provider-application</module>-->
 		<!--<module>provider-ats</module>-->
-		<module>provider-search</module>
-		<module>provider-talentpool</module>
+		<!--<module>provider-search</module>-->
+		<!--<module>provider-talentpool</module>-->
+		<module>provider-redpacket</module>
+		<!--<module>provider-dict</module>-->
+		<!--<module>provider-user</module>-->
+		<!--<module>provider-company</module>-->
+		<!--<module>provider-position</module>-->
+		<!--<module>provider-profile</module>-->
+		<!--<module>provider-application</module>-->
+		<!--<module>provider-ats</module>-->
+		<!--<module>provider-search</module>-->
+		<!--<module>provider-talentpool</module>-->
 		<!--<module>provider-parsing</module>-->
 		<!--<module>provider-messaging</module>-->
 		<!--<module>provider-careerstory</module>-->
@@ -43,6 +52,8 @@
 		<!--<module>provider-statistics</module>-->
 		<!--<module>facade-hr</module>-->
 		<!--<module>facade-wechat</module>-->
+		<!--<module>facade-hr</module>-->
+		<!--<module>tx-manager</module>-->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
